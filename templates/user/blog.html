@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block x %}
+<div class="fs-2 text-center">Blog <b color="green">
+    <i class="fa-solid fa-blog"></i>
+    </b>
+</div>
+<hr class="" style="height:5px;"/>
+<div class="row ncategory">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <div class="row">
+      <!--loop-->
+    {% for x in bdata %}
+      <div class="col-sm-4 my-4">
+        <div class="card">
+          <img src="/{{i.bpicture}}" class="img-card-top"/>
+          <div class="card-body">
+            <h5 class="card-title">{{x.bname}}</h5>
+            <P>{{x.bdes}}</P>
+            <i class="text-muted btn btn-sm-mycolor">{{x.bdate}}</i>
+          </div>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+
+{% endblock %}

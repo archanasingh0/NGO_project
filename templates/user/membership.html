@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block x %}
+<div class="fs-2 text-center"> Membership <b color="green">
+    <i class="fa-solid fa-eject"></i>
+    </b>
+</div>
+</br>
+</br>
+
+<div class="row my-4">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-5 ">
+        <form method="post" autocomplete="off" enctype="multipart/form-data">
+            {% csrf_token %}
+             <div class="input-group mb-1">
+                <i class="input-group-text bg-mycolor text-light"><i class="fa-solid fa-circle-user"></i></i>
+                 <input type="text" required name="mname" class="form-control" placeholder="Name"/></div></br>
+                  <div class="input-group mb-1">
+                <i class="input-group-text bg-mycolor text-light">Name</i>
+                      <input type="number" required name="mpincode" class="form-control" placeholder="Pincode"/></div></br>
+                       <div class="input-group mb-1">
+                <i class="input-group-text bg-mycolor text-light"><i class="fa-solid fa-city"></i></i>
+                       <select name="mcity" class="form-control">
+                           {% for x in ct %}
+
+                           <option>{{x.ccity}}</option>
+                           {% endfor %}
+                       </select>
+                       </div></br>
+                            <div class="input-group mb-1">
+                <i class="input-group-text bg-mycolor text-light"><i class="fa-solid fa-at"></i></i>
+                                <input type="email" required name="memail" class="form-control" placeholder="Email"/></div></br>
+                                 <div class="input-group mb-1">
+                <i class="input-group-text bg-mycolor text-light"><i class="fa-solid fa-building-columns"></i></i>
+                                     <input type="number" required name="mbank" class="form-control" placeholder="A/c No."/></div></br>
+                                      <div class="input-group mb-1">
+                <i class="input-group-text bg-mycolor text-light"><i class="fa-solid fa-user"></i></i>
+                                          <input type="text" required name="mcompany" class="form-control" placeholder="Company Address"/></div></br>
+                                           <div class="input-group mb-1">
+                <i class="input-group-text bg-mycolor text-light"><i class="fa-solid fa-location-dot"></i></i>
+                                               <textarea class="form-control" name="maddress" placeholder="Address"></textarea></div></br>
+            <input type="submit" class="form-control btn bg-primary" value="SUBMIT"/>
+
+        </form>
+    </div>
+    <div class="col-sm-5"></div>
+
+
+</div>
+
+
+{% endblock %}

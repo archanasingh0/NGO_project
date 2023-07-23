@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block x %}
+<div class="fs-2 text-center"><b> Image
+   <i class="fa-solid fa-image"></i>
+</>
+</div>
+
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+            {% if data %}
+            {% for x in data  %}
+            <div class="col-sm-4 my-2">
+                <!___start card___>
+                <div class="card" style="width:100;">
+  <img src="/{{x.gpic}}" class="card-img-top" alt="...">
+</div>
+                <!___end card___>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="com-sm-1"></div>
+</div>
+{% endblock x %}

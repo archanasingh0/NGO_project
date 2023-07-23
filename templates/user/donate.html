@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block x %}
+
+<div class="fs-2 text-center">DONATE NOW<b color="green">
+    <i class="fa-solid fa-circle-dollar-to-slot"></i>
+    </b>
+</div>
+<div class="row my-4">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-5 ">
+ <form method="post" class="row " autocomplete="off" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <div class="my-2 input-group">
+            <i class="input-group-text bg-mycolor text-light">
+                 <i class="fa-solid fa-circle-dollar-to-slot"></i>
+            </i>
+                <input name="damount" type="number" required class="form-control" placeholder="Amount"/>
+            </div></br>
+                 <div class="my-2 input-group">
+            <i class="input-group-text bg-mycolor text-light">
+                  <i class="fa-solid fa-user"></i>
+            </i>
+                <input type="text" name="dfname" required class="form-control" placeholder="First Name"/>
+            </div></br>
+                     <div class="my-2 input-group">
+            <i class="input-group-text bg-mycolor text-light">
+                  <i class="fa-solid fa-user"></i>
+            </i>
+                <input type="text" name="dlname" required class="form-control" placeholder="Last Name"/>
+            </div></br>
+           <div class="my-2 input-group">
+            <i class="input-group-text bg-mycolor text-light">
+                  <i class="fa-solid fa-envelope"></i>
+            </i>
+                <input type="email" name="demail" required class="form-control" placeholder="Email"/>
+            </div></br>
+      <div class="my-2 input-group">
+            <i class="input-group-text bg-mycolor text-light">
+                  <i class="fa-solid fa-phone"></i>
+            </i>
+                <input type="number" name="dphone" required class="form-control" placeholder="Phone"/>
+            </div></br>
+      <div class="my-2 input-group">
+            <i class="input-group-text bg-mycolor text-light">
+                  <i class="fa-solid fa-user"></i>
+            </i>
+            <select name="dcountry"  type="Country" class="form-control">
+    <option>Select Country</option>
+    {% for x in dt %}
+                <option>{{x.countryd}}</option>
+                {% endfor %}
+            </select>
+            </div></br>
+      <div class="my-2 input-group">
+            <i class="input-group-text bg-mycolor text-light">
+                  <i class="fa-solid fa-user"></i>
+            </i>
+                <textarea class="form-control" name="dadd" placeholder="Address"></textarea></div></br>
+      <div class="my-2 input-group">
+            <i class="input-group-text bg-mycolor text-light">
+                  <i class="fa-solid fa-user"></i>
+            </i>
+            <select name="dstate" type="State" class="form-control">
+    <option>Select State</option>
+    {% for x in st %}
+                <option>{{x.statei}}</option>
+                {% endfor %}
+            </select>
+            </div></br>
+       <div class="my-2 input-group">
+            <i class="input-group-text bg-mycolor text-light">
+                 <i class="fa-solid fa-circle-dollar-to-slot"></i>
+            </i>
+                <input type="number" name="dcode" required class="form-control" placeholder="Pincode"/>
+            </div></br>
+        <div class="my-2 input-group">
+            <i class="input-group-text bg-mycolor text-light">
+                  <i class="fa-solid fa-user"></i>
+            </i>
+                <input type="text" name="doccu" required class="form-control" placeholder="Occupation"/>
+            </div></br>
+        <input type="submit" class="form-control btn bg-mycolor text-light" value="SUBMIT"/>
+ </form>
+    </div>
+<div class="col-sm-5">
+        </br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="fs-4">You can donate from this QR also.&#10084;</b></br>
+        <img src="{% static '/images/g.jpeg' %}" style="margin-left:100px; height:500px; width:400px;"/>
+    </div>
+</div>
+{% endblock %}
